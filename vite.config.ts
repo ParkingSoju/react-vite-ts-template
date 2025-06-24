@@ -3,6 +3,7 @@ import {defineConfig} from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig(({mode}) => ({
+	base: '/react-vite-ts-template/',
 	plugins: [react()],
 	build: {
 		// outDir: 'build',
