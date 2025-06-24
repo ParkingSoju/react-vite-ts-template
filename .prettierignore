@@ -1,0 +1,16 @@
+# Ignore build artifacts and dependencies
+build
+dist
+coverage
+node_modules
+
+# Ignore lock files (auto-generated)
+*.lock
+package-lock.json
+
+# Ignore specific files
+README.md
+report.xml
+
+# Ignore all HTML files (as per your original rule)
+**/*.html
