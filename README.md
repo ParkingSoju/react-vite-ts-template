@@ -70,14 +70,30 @@ Including both a CSS reset and a library’s own base styles can lead to redunda
 
 ---
 
-## 🔧 Sample Scripts
+## 🔐 Security Defaults
 
-| Script             | Description                                           |
-| ------------------ | ----------------------------------------------------- |
-| `npm run local`    | Start Vite in **local** mode (`.env.local`)           |
-| `npm run build`    | Compile with TypeScript and build for **local** mode  |
-| `npm run dev`      | Start Vite in **development** mode (`.env.development`) |
-| `npm run build:dev`| Compile with TypeScript and build for **development** mode |
+This template includes built-in security headers during development via `vite.config.ts`:
+
+- `X-Frame-Options: DENY` — blocks clickjacking by preventing iframe embedding
+- `X-Content-Type-Options: nosniff` — disables MIME-type sniffing for safer content handling
+- `Referrer-Policy: no-referrer-when-downgrade` — controls how much referrer info is shared
+- `Permissions-Policy` — disables camera, microphone, and geolocation access by default
+
+These help simulate a production-hardened environment, even during local development.
 
 ---
 
+## 🔧 Sample Scripts
+
+| Script               | Description                                                |
+|----------------------|------------------------------------------------------------|
+| `npm run local`      | Start Vite in **localdev** mode (`.env.localdev`)          |
+| `npm run build:prod` | Build the app for **production** mode (`.env.production`)  |
+| `npm run dev`        | Start Vite in **development** mode (`.env.development`)    |
+| `npm run build:dev`  | Build the app for **development** mode (`.env.development`)|
+
+### Notes
+
+- ✅ Vite always loads `.env`, then `.env.[mode]`, and finally `.env.local` (if it exists), making `.env.local` perfect for **personal, machine-specific overrides**.
+- 🚫 `.env.local` should be **excluded from version control**. Be sure it's listed in your `.gitignore`.
+- ✅ This setup works smoothly whether you're **working solo** or **collaborating with a team**, and scales well for **staging**, **QA**, and **CI/CD environments**.
