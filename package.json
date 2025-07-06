@@ -1,15 +1,21 @@
 {
 	"name": "react-vite-ts-template",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
-		"build": "tsc -b && vite build",
+		"local": "vite --mode localdev",
+		"dev": "vite --mode development",
+		"staging": "vite --mode staging",
+		"prod": "vite --mode production",
+		"build:local": "vite build --mode localdev",
+		"build:dev": "vite build --mode development",
+		"build:staging": "vite build --mode staging",
+		"build:prod": "vite build --mode production",
+		"preview": "vite preview",
 		"lint": "eslint .",
 		"prettier:check": "prettier --check .",
-		"prettier:write": "prettier --write .",
-		"preview": "vite preview"
+		"prettier:write": "prettier --write ."
 	},
 	"dependencies": {
 		"react": "^19.1.0",
