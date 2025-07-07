@@ -17,7 +17,7 @@
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/ParkingSoju/react-vite-ts-template.git
+   git clone https://github.com/parkingsoju/react-vite-ts-template.git
    cd your-repo
    ```
 2. **Install dependencies**  
